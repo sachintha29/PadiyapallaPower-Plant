@@ -1,0 +1,23 @@
+<div class="navtabs-container">
+    <nav mat-tab-nav-bar mat-tab-nav-bar fxFlex fxLayout fxLayoutAlign="center center">
+        <a mat-tab-link routerLink="/" routerLinkActive #home="routerLinkActive" [active]="home.isActive">
+            <span class="display"><b>Home</b></span>
+        </a>
+        <a mat-tab-link routerLink="/signin" routerLinkActive #signin="routerLinkActive" [active]="signin.isActive">
+            <span class="display"><b>Sign in</b> </span>
+        </a>
+        <a mat-tab-link routerLink="/about" routerLinkActive #about="routerLinkActive" [active]="about.isActive">
+            <span class="display"><b>About</b> </span>
+        </a>
+        <a mat-tab-link routerLink="/contact" routerLinkActive #contact="routerLinkActive" [active]="contact.isActive">
+            <span class="display"><b>Contact</b> </span>
+        </a>
+
+        <a mat-tab-link (click)="authService.SignOut()">
+            <span class="display"><b>Log Out</b> </span>
+
+        </a>
+
+
+    </nav>
+</div>

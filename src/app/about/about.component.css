@@ -1,0 +1,28 @@
+.main-container {
+    height: 50vh;
+    background: url(/assets/images/dsc_1289-3.jpg)center center no-repeat;
+    background-size: cover;
+}
+
+.main-head-container,
+.mat-display-4,
+.mat-title {
+    color: whitesmoke
+}
+
+.head-container {
+    padding: 100px;
+}
+
+.description {
+    text-align: justify;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.mat-subheading-1,
+.mat-subheading-2,
+.desc_wrapper,
+.col-md-6 {
+    margin-left: 10px;
+}

@@ -1,0 +1,27 @@
+<app-header></app-header>
+<app-navtabs></app-navtabs>
+<div class="main-container" [@moveInLeft]='state'>
+
+    <div class="login-container">
+        <div fxFlex fxLayoutAlign="flex-end">
+            <button class="login-button" mat-stroked-button color="primary" [routerLink]="['/signin']" routerLinkActive="router-link-active">
+             <b> Sign in</b>
+          </button>
+        </div>
+    </div>
+    <div class="head-container" fxLayout="row" fxLayout="coloum" fxLayoutAlign="center center">
+        <div class="main-head-container">
+            <h2 class="mat-display-2">
+                <b> Pain Asian Power - Paddiyapalla</b>
+                <br>
+
+            </h2>
+            <h1 class="mat-title">
+                <span><b>Mini Hydro Project</b></span>
+            </h1>
+
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+@mixin navtabs-component-theme($pap) {
+    $primary: map-get($pap, primary);
+    $accent: map-get($pap, accent);
+    .navtabs-container {
+        background-color: mat-color($pap-primary, 500)
+    }
+    .mat-list-option:hover,
+    .mat-list-option:focus,
+    .mat-nav-list .mat-list-item:hover,
+    .mat-nav-list .mat-list-item:focus {
+        background-color: mat-color($pap-primary, 100);
+        color: mat-color($pap-primary, 900);
+    }
+}

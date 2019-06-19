@@ -1,0 +1,51 @@
+    .main-container {
+        height: 85vh;
+        background: url(/assets/images/background-1.jpg)center center no-repeat;
+        background-size: cover;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    .login-container {
+        padding: 50px;
+    }
+    
+    .main-head-container {
+        margin-bottom: 30%;
+    }
+    
+    .login-button {
+        width: 170px;
+        color: white;
+        border: 1px solid white;
+        text-transform: uppercase;
+    }
+    
+    .head-container {
+        height: 60vh;
+    }
+    
+    .main-head-container .mat-display-2,
+    .mat-title {
+        color: antiquewhite;
+    }
+    
+    .mat-title {
+        text-align: center;
+    }
+    
+    .main-head-container span {
+        color: white;
+    }
+    
+    mat-sidenav-containner,
+    mat-sidenav-content,
+    mat-sidenav {
+        height: 500%;
+    }
+    
+    mat-sidenav {
+        width: 250px;
+    }

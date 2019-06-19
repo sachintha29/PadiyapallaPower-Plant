@@ -1,0 +1,9 @@
+.toolbar-flex {
+    flex: 1 0.5 auto;
+}
+
+.display {
+    font-size: 18px;
+    color: rgb(32, 32, 102);
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS';
+}

@@ -1,0 +1,16 @@
+.main-container {
+    height: 60vh;
+    background: url(/assets/images/dsc_0793-2.jpg)center center no-repeat;
+    background-size: cover;
+}
+
+.head-container {
+    padding: 100px;
+}
+
+.main-head-container,
+.mat-display-4,
+.mat-title {
+    color: rgb(100, 95, 95);
+    text-align: center;
+}
