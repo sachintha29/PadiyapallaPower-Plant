@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { UserComponent } from './user/user.component';
 import { SignupComponent } from './signup/signup.component';
+import { AddUserComponent } from './add-user/add-user.component';
 import { UsersListComponent } from './users-list/users-list.component';
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
         { path: '', redirectTo: 'user', pathMatch: 'full'},
-        { path: 'userdetails', component: UsersListComponent},
+        { path: 'users-list', component: UsersListComponent},
         { path: 'user', component: UserComponent},
         {path: 'signup', component: SignupComponent}
     ]

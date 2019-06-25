@@ -41,37 +41,3 @@
     <br>
     <br>
 </div>
-<ng-container *ngIf="(authService.user | async) || {} as user">
-    <form [formGroup]="detailForm" *ngIf="user.uid && (!user.name ||  !user.address)" (ngSubmit)="updateUserData(user)">
-
-        <h3>Enter your details</h3>
-        <mat-form-field>
-            <input formControlName="displayName" matInput placeholder="Name">
-            <mat-error>This Field is mandatory</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-            <input formControlName="address" matInput placeholder="Address">
-        </mat-form-field>
-        <mat-form-field>
-            <input formControlName="phone" matInput placeholder="Phone Number">
-            <mat-error *ngIf="">This Field is mandatary</mat-error>
-            <mat-error *ngIf="">"Minimun 10 charcters needed."</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-select formControlName="role" placeholder="User role">
-                <mat-option>None</mat-option>
-                <ng-container *ngFor="let role of roles">
-                    <mat-option value="{{role.value}}">{{role.value}}</mat-option>
-                </ng-container>
-            </mat-select>
-        </mat-form-field>
-        <div class="button-row">
-            <button mat-raised-button color="primary" type="submit">Submit</button>
-            <button mat-raised-button color="warn">Clear</button>
-        </div>
-
-    </form>
-
-
-</ng-container>

@@ -91,7 +91,7 @@ AuthLogin(provider) {
 return this.afAuth.auth.signInWithPopup(provider)
 .then((result) => {
 this.ngZone.run(() => {
-this.router.navigate(['dashboard']);
+this.router.navigate(['/admin']);
 });
 this.SetUserData(result.user);
 }).catch((error) => {
@@ -112,9 +112,6 @@ SetUserData(user) {
   displayName: user.displayName,
   photoURL: user.photoURL,
   emailVerified: user.emailVerified,
-  address: user.address,
-  phone: user.phone,
-  role: user.role
   };
   return userRef.set(userData, {
   merge: true
@@ -124,7 +121,7 @@ SetUserData(user) {
 SignOut() {
 return this.afAuth.auth.signOut().then(() => {
 localStorage.removeItem('user');
-this.router.navigate(['signin']);
+this.router.navigate(['home']);
 });
 }
 }

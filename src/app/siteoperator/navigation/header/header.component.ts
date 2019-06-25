@@ -8,7 +8,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Output() SideNavigationToggle = new EventEmitter();
-
+  headertitle = 'Site Operator';
   constructor() { }
 
   ngOnInit() {

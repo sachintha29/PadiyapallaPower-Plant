@@ -4,7 +4,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SigninComponent } from './shared/signin/signin.component';
-import { AdminComponent } from './admin/admin.component';
 import { BeforsigninComponent } from './shared/beforsignin/beforsignin.component';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './shared/verify-email/verify-email.component';
@@ -19,8 +18,9 @@ const routes: Routes = [
   {path : 'vertify-email', component : VerifyEmailComponent},
   { path: '',   redirectTo: '/admin', pathMatch: 'full'},
   { path: '',   redirectTo: '/manager', pathMatch: 'full'},
+  {path: '', redirectTo: '/operator', pathMatch: 'full'},
   {path: '', redirectTo: '/siteupervisor', pathMatch: 'full'},
-  {path: '', redirectTo: '/siteoperator', pathMatch: 'full'}
+
 ];
 
 @NgModule({

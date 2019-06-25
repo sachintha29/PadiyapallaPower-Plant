@@ -2,8 +2,8 @@
 <app-navtabs></app-navtabs>
 
 <div class="main-container">
-    <div class="user-display" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center center">
-        <mat-card class="admin" fxFlex="40" fxFlex.sm="80">
+    <div class="user-display" fxLayout.xs="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center center">
+        <mat-card class="admin" fxFlex="20" fxFlex.sm="40">
             <mat-card-header fxLayout="row" fxLayoutAlign="center center">
                 <h2>Administartor</h2>
             </mat-card-header>
@@ -14,18 +14,16 @@
             </mat-card-actions>
 
         </mat-card>
-        <mat-card class="siteoperator" fxFlex="40" fxFlex.sm="80">
+        <mat-card class="siteoperator" fxFlex="20" fxFlex.sm="40">
             <mat-card-header fxLayout="row" fxLayoutAlign="center center">
                 <h2>Site Operator</h2>
             </mat-card-header>
             <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
-                <span class="mat-display-1">  <a mat-raised-button color="primary">Sign in</a></span>
+                <span class="mat-display-1">  <a routerLink="/signin" routerLinkActive #signin="routerLinkActive" mat-raised-button color="primary">Sign in</a></span>
             </mat-card-actions>
 
         </mat-card>
-    </div>
-    <div class="user-display" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center center">
-        <mat-card class="supervisor" fxFlex="40" fxFlex.sm="80">
+        <mat-card class="supervisor" fxFlex="20" fxFlex.sm="40">
             <mat-card-header fxLayout="row" fxLayoutAlign="center center">
                 <h2>Site Supervisor</h2>
             </mat-card-header>
@@ -36,12 +34,12 @@
             </mat-card-actions>
 
         </mat-card>
-        <mat-card class="manager" fxFlex="40" fxFlex.sm="80">
+        <mat-card class="manager" fxFlex="20" fxFlex.sm="40">
             <mat-card-header fxLayout="row" fxLayoutAlign="center center">
                 <h2>Manager</h2>
             </mat-card-header>
             <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
-                <span class="mat-display-1">  <a mat-raised-button color="primary">Sign in</a></span>
+                <span class="mat-display-1">  <a routerLink="/signin" routerLinkActive #signin="routerLinkActive" mat-raised-button color="primary">Sign in</a></span>
             </mat-card-actions>
 
         </mat-card>

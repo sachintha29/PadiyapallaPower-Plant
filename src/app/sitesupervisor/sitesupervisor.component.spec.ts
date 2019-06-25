@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SitesupervisorComponent } from './sitesupervisor.component';
+import { SitesupervisorComponent } from './siteupervisor.component';
 
 describe('SitesupervisorComponent', () => {
   let component: SitesupervisorComponent;

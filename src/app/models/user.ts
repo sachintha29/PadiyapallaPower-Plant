@@ -4,8 +4,6 @@
         displayName: string;
         photoURL: string;
         emailVerified: boolean;
-        address: string;
-        phone: string;
-        role: string;
+
  }
 
