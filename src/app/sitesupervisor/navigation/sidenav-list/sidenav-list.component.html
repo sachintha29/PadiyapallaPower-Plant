@@ -1,18 +1,60 @@
 <mat-nav-list class="sidenav-list">
-
-    <a mat-list-item routerLink="/admin/signup" (click)="OnToggleClose()">
-        <mat-icon>account_circle</mat-icon>
-        <span><h3 class="mat-body-1">Sign up</h3></span>
-    </a>
-    <a mat-list-item routerLink="/admin/allusers" (click)="OnToggleClose()">
+    <span><h6>Power Genetation Data</h6></span>
+    <a mat-list-item routerLink="/supervisor/main" (click)="OnToggleClose()">
         <mat-icon>table_chart</mat-icon>
-        <span><h3 class="mat-body-1">Users Details</h3></span>
-
+        <span><h3 class="mat-body-2">Power Genetation Data</h3></span>
     </a>
     <mat-list>
-        <a mat-list-item>
+        <span><h6>Maintenance Data</h6></span>
+        <a mat-list-item routerLink="/supervisor/generator-anualy" (click)="OnToggleClose()">
             <mat-icon>table_chart</mat-icon>
-            <span><h3 class="mat-body-1">User</h3></span>
+            <span><h3 class="mat-body-2">Generator- Anually</h3></span>
+        </a>
+        <a mat-list-item routerLink="/supervisor/generator-halfyear" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Generator- Halfyear</h3></span>
+        </a>
+        <a mat-list-item routerLink="/supervisor/generator-quaterly" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Generator- Quarterly</h3></span>
+        </a>
+        <a mat-list-item routerLink="/supervisor/generator-monthly" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Generator- Monthly</h3></span>
+        </a>
+
+        <a mat-list-item routerLink="/supervisor/generator-weekly" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Generator- Weekly</h3></span>
+        </a>
+        <a mat-list-item routerLink="/supervisor/turbine-anualy" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Turbine- Anually</h3></span>
+        </a>
+
+        <a mat-list-item routerLink="/supervisor/turbine-quaterly" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Turbine- Quarterly</h3></span>
+        </a>
+        <a mat-list-item routerLink="/supervisor/turbine-monthly" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Turbine- Monthly</h3></span>
+        </a>
+
+        <a mat-list-item routerLink="/supervisor/turbine-weekly" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Turbine- Weekly</h3></span>
+        </a>
+        <a mat-list-item routerLink="/supervisor/turbine-other" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-2">Turbine- Other</h3></span>
+        </a>
+    </mat-list>
+
+    <mat-list>
+        <a mat-list-item routerLink="/supervisor/spartparts-update" (click)="OnToggleClose()">
+            <mat-icon>table_chart</mat-icon>
+            <span><h3 class="mat-body-1">Spare parts Data</h3></span>
         </a>
     </mat-list>
 

@@ -1,48 +1,69 @@
-<div class="row" id="basicDataBlock">
-    <div class="col-sm-8 col-sm-offset-2" >
-      <form>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
 
-    	<div class="col-sm-12">
-    	<div class="col-sm-4">
-          <label class="form-label">Date</label>
-        </div>
-        <div class="col-sm-8">
-          <input type="text" name="" class="form-control input-block">
-        </div>
-        </div>
+        <br>
+        <h4> Power Generation Data</h4>
+        <form>
 
-        <div class="col-sm-12">
-        <div class="col-sm-4">
-          <label class="form-label">CEB Meter</label>
-        </div>
-        <div class="col-sm-8">
-          <input type="text" name="" class="form-control input-block">
-        </div>
-        </div>
+            <div class="col-sm-4">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Month</mat-label>
+                    <mat-select>
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
 
-        <div class="col-sm-12">
-        <div class="col-sm-4">
-          <label class="form-label">Machine One Meter</label>
-        </div>
-        <div class="col-sm-8">
-          <input type="text" name="" class="form-control input-block">
-        </div>
-        </div>
+                <mat-form-field class="example-full-width">
+                    <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
 
-        <div class="col-sm-12">
-        <div class="col-sm-4">
-          <label class="form-label">Machine Two Meter</label>
-        </div>
-        <div class="col-sm-8">
-          <input type="text" name="" class="form-control input-block">
-        </div>
-        </div>
+                <mat-form-field class="example-full-width">
+                    <input type="number" matInput placeholder="CEB Meter" [formControl]="CEBmeterFormControl " [errorStateMatcher]="matcher">
 
-        <div class="col-sm-12" align="right">
-      	  <button class="btn btn-success next-btn" (click)="toMachineOne()" >Next</button> 
-        </div>
+                    <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                        Number is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
 
-      </form>
-     </div>
-      
- </div>
+            <div class="col-sm-4">
+
+                <mat-form-field class="example-full-width">
+                    <input type="number" matInput placeholder="Machine One Meter" [formControl]="MachineOneMetreFormControl" [errorStateMatcher]="matcher">
+
+                    <mat-error *ngIf="MachineOneMetreFormControl.hasError('required')">
+                        Number is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+
+                <mat-form-field class="example-full-width">
+                    <input type="number" matInput placeholder="Machine Two Meter" [formControl]="MachineTwoMetreFormControl" [errorStateMatcher]="matcher">
+
+                    <mat-error *ngIf="MachineTwoMetreFormControl.hasError('required')">
+                        Number is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="col-sm-4">
+                <button mat-button>Submit</button>
+                <button mat-button color="warn">Clear</button>
+                <div class="row">
+                    <a mat-button routerLink="/operator/machine-one">Machine Details</a>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+</div>

@@ -1,12 +1,27 @@
-.form-label{
-	margin-top: 10px;
-	color: #8d8d8e;
+.next-btn {
+    margin: 15px;
 }
 
-.input-block{
-	margin-top: 10px;
+h4 {
+    text-align: center;
 }
 
-.next-btn{
-	margin: 15px;
+.example-button-row button,
+.example-button-row a {
+    margin-right: 8px;
+    size: 100rem;
+}
+
+.example-full-width {
+    width: 250px;
+}
+
+.col-sm-4 {
+    max-width: 100%;
+    align-content: center;
+}
+
+.scrollable {
+    height: 100%;
+    overflow-y: scroll;
 }

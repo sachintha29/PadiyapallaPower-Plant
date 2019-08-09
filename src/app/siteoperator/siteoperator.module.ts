@@ -20,6 +20,14 @@ import { GeneratorHalfyearComponent } from './maintenence-data/generator/halfyea
 import { GeneratorQuaterlyComponent } from './maintenence-data/generator/quaterly/quaterly.component';
 import { GeneratorWeeklyComponent } from './maintenence-data/generator/weekly/weekly.component';
 import { GeneratorMonthlyComponent } from './maintenence-data/generator/monthly/monthly.component';
+import { SigninComponent } from './signin/signin.component';
+import { TurbineAnnualyComponent } from './maintenence-data/turbine/annualy/annualy.component';
+import { TurbineHalfyearComponent } from './maintenence-data/turbine/halfyear/halfyear.component';
+import { TurbineMonthlyComponent } from './maintenence-data/turbine/monthly/monthly.component';
+import { TurbineQuaterlyComponent } from './maintenence-data/turbine/quaterly/quaterly.component';
+import { TurbineWeeklyComponent } from './maintenence-data/turbine/weekly/weekly.component';
+import { TurbineOthersComponent } from './maintenence-data/turbine/others/others.component';
+import { UpdateComponent } from './spare-parts/update/update.component';
 @NgModule({
   declarations: [
     SiteoperatorComponent,
@@ -33,7 +41,15 @@ import { GeneratorMonthlyComponent } from './maintenence-data/generator/monthly/
     GeneratorHalfyearComponent,
     GeneratorMonthlyComponent,
     GeneratorWeeklyComponent,
-    GeneratorQuaterlyComponent
+    GeneratorQuaterlyComponent,
+    TurbineAnnualyComponent,
+    TurbineHalfyearComponent,
+    TurbineMonthlyComponent,
+    TurbineQuaterlyComponent,
+    TurbineWeeklyComponent,
+    TurbineOthersComponent,
+    UpdateComponent,
+    SigninComponent
   ],
   imports: [
     CommonModule,

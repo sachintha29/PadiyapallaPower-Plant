@@ -16,15 +16,15 @@ import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NavtabsComponent } from './shared/navtabs/navtabs.component';
 
-// componen
+// component
 import { ContactComponent } from './contact/contact.component';
-import { SigninComponent } from './shared/signin/signin.component';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './shared/verify-email/verify-email.component';
 // user modules
 import { AdminModule} from './admin/admin.module';
 import { ManagerModule } from './manager/manager.module';
 import { SiteoperatorModule } from './siteoperator/siteoperator.module';
+import {SitesupervisorModule} from './sitesupervisor/sitesupervisor.module';
 
 
 import { BeforsigninComponent } from './shared/beforsignin/beforsignin.component';
@@ -48,7 +48,6 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     NavtabsComponent,
     ContactComponent,
-    SigninComponent,
     BeforsigninComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent
@@ -68,6 +67,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdminModule,
     ManagerModule,
     SiteoperatorModule,
+    SitesupervisorModule,
     AngularFireModule.initializeApp(environment.firebase, 'realhydro'),
     AngularFireDatabaseModule,
     AngularFirestoreModule, // Only required for database features

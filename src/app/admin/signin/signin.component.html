@@ -1,0 +1,52 @@
+<div class="main-container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <mat-card class="card">
+        <div class="sign-in-container" fxLayout="row" fxLayout="column" fxLayoutAlign="center center">
+
+            <h3 class="mat-display-1"><b>Sign in</b></h3>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" [errorStateMatcher]="matcher" [formControl]="emailFormControl" [errorStateMatcher]="matcher" #userName required>
+
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [formControl]="passwordFormControl" [errorStateMatcher]="matcher" #userPassword required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+
+                <mat-error *ngIf="passwordFormControl.hasError('required') &&  !passwordFormControl.hasError('minlength(8)')">
+                    Password is <strong>required</strong>
+
+                </mat-error>
+
+                <mat-error *ngIf="!passwordFormControl.hasError('pattern(this.pwdPattern)') ||  !passwordFormControl.hasError('minlength(8)')">
+                    Password <strong>should A-Z,a-z,0-9,@,#,$ with characters  </strong>
+                </mat-error>
+
+
+            </mat-form-field>
+            <div fxLayout="column" fxLayoutAlign="space-around end">
+
+
+                <span routerLink="/forgot-password">
+                    <i class="mat-button" >Forget password ?</i></span>
+            </div>
+
+            <button mat-stroked-button color="blue" class="login-button" (click)="authService.AdminSignIn(userName.value, userPassword.value)">Login</button>
+            <br>
+            <button mat-stroked-button color="blue" class=" google" (click)="authService.GoogleAuth()"><img src="https://img.icons8.com/color/24/000000/google-logo.png"> Login with Google</button>
+
+        </div>
+    </mat-card>
+</div>

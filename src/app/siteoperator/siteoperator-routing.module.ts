@@ -11,6 +11,14 @@ import { GeneratorHalfyearComponent } from './maintenence-data/generator/halfyea
 import { GeneratorQuaterlyComponent } from './maintenence-data/generator/quaterly/quaterly.component';
 import { GeneratorWeeklyComponent } from './maintenence-data/generator/weekly/weekly.component';
 import { GeneratorMonthlyComponent } from './maintenence-data/generator/monthly/monthly.component';
+import { SigninComponent } from './signin/signin.component';
+import { TurbineAnnualyComponent } from './maintenence-data/turbine/annualy/annualy.component';
+import { TurbineHalfyearComponent } from './maintenence-data/turbine/halfyear/halfyear.component';
+import { TurbineQuaterlyComponent } from './maintenence-data/turbine/quaterly/quaterly.component';
+import { TurbineMonthlyComponent } from './maintenence-data/turbine/monthly/monthly.component';
+import { TurbineWeeklyComponent } from './maintenence-data/turbine/weekly/weekly.component';
+import { TurbineOthersComponent } from './maintenence-data/turbine/others/others.component';
+import { UpdateComponent } from './spare-parts/update/update.component';
 
 const routes: Routes = [
   {
@@ -18,6 +26,7 @@ const routes: Routes = [
   component: SiteoperatorComponent,
   children: [
       { path: '', redirectTo: 'main', pathMatch: 'full'},
+      {path : 'signin', component: SigninComponent},
       { path: 'main', component: MainDataComponent},
       { path : 'machine-one', component: MachineOneComponent},
       { path : 'machine-two', component: MachineTwoComponent},
@@ -26,6 +35,13 @@ const routes: Routes = [
       {path: 'generator-quaterly', component: GeneratorQuaterlyComponent},
       {path: 'generator-weekly', component: GeneratorWeeklyComponent},
       {path: 'generator-monthly', component: GeneratorMonthlyComponent},
+      {path: 'turbine-anualy', component: TurbineAnnualyComponent},
+      {path: 'turbine-halfyear', component: TurbineHalfyearComponent},
+      {path: 'turbine-quaterly', component: TurbineQuaterlyComponent},
+      {path: 'turbine-monthly', component: TurbineMonthlyComponent},
+      {path: 'turbine-weekly', component: TurbineWeeklyComponent},
+      {path: 'turbine-other', component: TurbineOthersComponent},
+      {path: 'spartparts-update', component: UpdateComponent }
 
   ]
   }
