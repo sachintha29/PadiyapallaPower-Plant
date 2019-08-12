@@ -1,118 +1,90 @@
 <br>
 <div class="container" id="weeklyData">
-    <h2 style="margin-left: 15px;"><b>Annually</b></h2>
+    <h4 style="margin-left: 30px;"><b>Annually</b></h4>
 </div>
-<div class="row">
+<div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()">
 
-    <div class="col-sm-6 col-sm-offset-2">
-        <div class="col-sm-12">
-            <h3 style="margin-left: 15px;">Machine One</h3>
-        </div>
+        <mat-form-field class="example-full-width">
+            <input type="number" maxlength="4" matInput placeholder="Enter Year" name="year" #year="ngModel" [(ngModel)]="gData.year" class="form-control" required/>
+            <span *ngIf="(year.dirty || year.touched) && year.hasError('required')" class="alert">
+                         Year  is required.
+                </span>
 
+        </mat-form-field>
 
-        <form class="example-form">
+        <h6 style="margin-left: 30px;">Machine One</h6>
 
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Control Unit Case Cleaning" name="m1ControlUnitCaseCleaning" #m1ControlUnitCaseCleaning="ngModel" [(ngModel)]="gData.machine1ControlUnitCaseCleaning" class="form-control" required/>
+            <span *ngIf="(m1ControlUnitCaseCleaning.dirty || m1ControlUnitCaseCleaning.touched) && m1ControlUnitCaseCleaning.hasError('required')" class="alert">
+                Field is required.
+        </span>
+        </mat-form-field>
 
-            <div class="col-sm-10">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Control Unit Case Cleaning" [formControl]="ControlUnitCaseCleaningFormControl">
-                    <mat-error *ngIf="ControlUnitCaseCleaningFormControl.hasError('required')">
-                        Field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-            </div>
-
-            <div class="col-sm-10">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Insulation Resistance Verification" [formControl]="InsulationResistanceVerificationFormControl">
-                    <mat-error *ngIf="InsulationResistanceVerificationFormControl.hasError('required')">
-                        Field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-            </div>
-
-            <div class="col-sm-10">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Check Tightness of all Power Cables in Main Terminals" [formControl]="CheckTightnessPowerCablesFormControl">
-                    <mat-error *ngIf="CheckTightnessPowerCablesFormControl.hasError('required')">
-                        Field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-            </div>
-
-            <div class="col-sm-10">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Checking of Excister Air Gap is in Order" [formControl]="CheckingofExcisterAirGapFormControl">
-                    <mat-error *ngIf="CheckingofExcisterAirGapFormControl.hasError('required')">
-                        Field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </div>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Insulation Resistance Verification" name="m1InsulationResistanceVerifi" #m1InsulationResistanceVerifi="ngModel" [(ngModel)]="gData.machine1InsulationResistanceVerifi" class="form-control" required/>
+            <span *ngIf="(m1InsulationResistanceVerifi.dirty || m1InsulationResistanceVerifi.touched) && m1InsulationResistanceVerifi.hasError('required')" class="alert">
+                Field is required.
+        </span>
+        </mat-form-field>
 
 
-        </form>
-        <div class="col-sm-6" align="center">
-            <button class="btn btn-success next-btn" onclick="nextButtonPressed()">Submit</button>
-        </div>
-    </div>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Check Tightness of all Power Cables in Main Terminals" name="m1CheckTightnessofallPower" #m1CheckTightnessofallPower="ngModel" [(ngModel)]="gData.machine1CheckTightnessofallPower" class="form-control" required/>
+            <span *ngIf="(m1CheckTightnessofallPower.dirty || m1CheckTightnessofallPower.touched) && m1CheckTightnessofallPower.hasError('required')" class="alert">
+                Field is required.
+        </span>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Checking of Excister Air Gap is in Order" name="m1CheckingofExcisterAirGap" #m1CheckingofExcisterAirGap="ngModel" [(ngModel)]="gData.machine1CheckingofExcisterAirGap" class="form-control" required/>
+            <span *ngIf="(m1CheckingofExcisterAirGap.dirty || m1CheckingofExcisterAirGap.touched) && m1CheckingofExcisterAirGap.hasError('required')" class="alert">
+                Field is required.
+        </span>
+        </mat-form-field>
 
 
-    <div class="col-sm-6 col-sm-offset-2">
-        <div class="col-sm-12">
-            <h3 style="margin-left: 15px;">Machine Two</h3>
-        </div>
-
-        <form class="example-form">
+        <h6 style="margin-left: 30px;">Machine Two
+        </h6>
 
 
-            <div class="col-sm-10">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Control Unit Case Cleaning" [formControl]="ControlUnitCaseCleaningFormControl">
-                    <mat-error *ngIf="ControlUnitCaseCleaningFormControl.hasError('required')">
-                        Field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Control Unit Case Cleaning" name="m2ControlUnitCaseCleaning" #m2ControlUnitCaseCleaning="ngModel" [(ngModel)]="gData.machine2ControlUnitCaseCleaning" class="form-control" required/>
+            <span *ngIf="(m2ControlUnitCaseCleaning.dirty || m2ControlUnitCaseCleaning.touched) && m2ControlUnitCaseCleaning.hasError('required')" class="alert">
+                    Field is required.
+            </span>
+        </mat-form-field>
 
-            </div>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Insulation Resistance Verification" name="m2InsulationResistanceVerifi" #m2InsulationResistanceVerifi="ngModel" [(ngModel)]="gData.machine2InsulationResistanceVerifi" class="form-control" required/>
+            <span *ngIf="(m2InsulationResistanceVerifi.dirty || m2InsulationResistanceVerifi.touched) && m2InsulationResistanceVerifi.hasError('required')" class="alert">
+                    Field is required.
+            </span>
+        </mat-form-field>
 
-            <div class="col-sm-10">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Insulation Resistance Verification" [formControl]="InsulationResistanceVerificationFormControl">
-                    <mat-error *ngIf="InsulationResistanceVerificationFormControl.hasError('required')">
-                        Field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Check Tightness of all Power Cables in Main Terminals" name="m2CheckTightnessofallPower" #m2CheckTightnessofallPower="ngModel" [(ngModel)]="gData.machine2CheckTightnessofallPower" class="form-control" required/>
+            <span *ngIf="(m2CheckTightnessofallPower.dirty || m2CheckTightnessofallPower.touched) && m2CheckTightnessofallPower.hasError('required')" class="alert">
+                    Field is required.
+            </span>
+        </mat-form-field>
+        <br>
 
-            </div>
-
-            <div class="col-sm-10">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Check Tightness of all Power Cables in Main Terminals" [formControl]="CheckTightnessPowerCablesFormControl">
-                    <mat-error *ngIf="CheckTightnessPowerCablesFormControl.hasError('required')">
-                        Field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-            </div>
-
-            <div class="col-sm-10">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Checking of Excister Air Gap is in Order" [formControl]="CheckingofExcisterAirGapFormControl">
-                    <mat-error *ngIf="CheckingofExcisterAirGapFormControl.hasError('required')">
-                        Field is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-6" align="center">
-                <button class="btn btn-success next-btn" onclick="nextButtonPressed()">Submit</button>
-            </div>
-
-        </form>
-
-    </div>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Checking of Excister Air Gap is in Order" name="m2CheckTightnessofallPower" #m2CheckingofExcisterAirGap="ngModel" [(ngModel)]="gData.machine2CheckingofExcisterAirGap" class="form-control" required/>
+            <span *ngIf="(m2CheckTightnessofallPower.dirty || m2CheckTightnessofallPower.touched) && m2CheckTightnessofallPower.hasError('required')" class="alert">
+                    Field is required.
+            </span>
+        </mat-form-field>
 
 
+        <button type="submit" mat-stroked-button>Add</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+    <button mat-stroked-button (click)="newData()">Ok</button>
 </div>

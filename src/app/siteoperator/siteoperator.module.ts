@@ -4,11 +4,12 @@ import { MaterialModule } from '../shared/material.module';
 import { SiteoperatorRoutingModule } from './siteoperator-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainDataComponent } from './generate-data/main-data/main-data.component';
-import { MachineOneComponent } from './generate-data/machine-one/machine-one.component';
-import { MachineTwoComponent } from './generate-data/machine-two/machine-two.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { SiteoperatorComponent } from './siteoperator.component';
 import { NavtabsComponent } from './navigation/navtabs/navtabs.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
@@ -28,12 +29,19 @@ import { TurbineQuaterlyComponent } from './maintenence-data/turbine/quaterly/qu
 import { TurbineWeeklyComponent } from './maintenence-data/turbine/weekly/weekly.component';
 import { TurbineOthersComponent } from './maintenence-data/turbine/others/others.component';
 import { UpdateComponent } from './spare-parts/update/update.component';
+
+import { AuthService } from '../services/auth.service';
+import { PowerGenerationService } from '../services/power-generation.service';
+import {GeneratorAnuallyService} from '../services/generator-anually.service';
+import { UserdetailsService } from '../services/userdetails.service';
+
+
+
+
 @NgModule({
   declarations: [
     SiteoperatorComponent,
     MainDataComponent ,
-    MachineOneComponent,
-    MachineTwoComponent,
     NavtabsComponent,
     SidenavListComponent,
     HeaderComponent,
@@ -59,7 +67,12 @@ import { UpdateComponent } from './spare-parts/update/update.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    NgbModule,
+    ToastrModule.forRoot(),
+
+  ],
+
+  providers: [AuthService, PowerGenerationService, GeneratorAnuallyService ],
 })
 export class SiteoperatorModule { }

@@ -32,8 +32,7 @@ export class MainDataComponent implements OnInit {
   ngOnInit() {
   }
 
-  Machine1() {
 
   }
 
-}
+

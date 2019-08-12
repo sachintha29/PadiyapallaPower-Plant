@@ -1,4 +1,27 @@
 .example-full-width {
     width: 400px;
     align-self: center;
+    margin-left: 30px;
+}
+
+.example-full-width1 {
+    width: 200px;
+    margin-left: 30px;
+}
+
+.btn-sub {
+    margin-left: 30px;
+    width: 100px;
+    size: 20%;
+}
+
+.alert {
+    font-size: 12px;
+    height: 10px;
+    color: #dc3545;
+}
+
+.btn {
+    box-align: center;
+    margin-left: 30px;
 }

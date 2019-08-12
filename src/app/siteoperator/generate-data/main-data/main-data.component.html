@@ -1,69 +1,222 @@
-<div class="row">
-    <div class="col-sm-6 col-sm-offset-1">
+<mat-card>
+    <mat-card-content>
+        <h5> Power Generation Data</h5>
 
-        <br>
-        <h4> Power Generation Data</h4>
-        <form>
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">
+            <mat-form-field class="example-full-width">
+                <input type="text" matInput [matDatepicker]="picker" placeholder="Choose a date" id="date" #date="ngModel" name="date" [(ngModel)]="powergendata.date" class="form-control" required/>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <span *ngIf="(date.dirty || date.touched) && date.hasError('required') " class="alert">
+                    Date is required.
+                </span>
+            </mat-form-field>
 
-            <div class="col-sm-4">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Month</mat-label>
-                    <mat-select>
-                        <mat-option>None</mat-option>
-                        <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-4">
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="CEB Meter " name="CEBMeter" #CEBMeter="ngModel" [(ngModel)]="powergendata.cebmeter" class="form-control" required/>
+                <span *ngIf="(CEBMeter.dirty || CEBMeter.touched) && CEBMeter.hasError('required') " class="alert">
+                    CEB Meter   is required.
+                </span>
+            </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Choose a date">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-4">
 
-                <mat-form-field class="example-full-width">
-                    <input type="number" matInput placeholder="CEB Meter" [formControl]="CEBmeterFormControl " [errorStateMatcher]="matcher">
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Machine One Meter Reading" name="MachineOne" #MachineOne="ngModel" [(ngModel)]="powergendata.machineone" class="form-control" required/>
+                <span *ngIf="(MachineOne.dirty || MachineOne.touched) && MachineOne.hasError('required') " class="alert">
+                    Machine One Meter Reading is required.
+                </span>
 
-                    <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
-                        Number is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </div>
+            </mat-form-field>
 
-            <div class="col-sm-4">
 
-                <mat-form-field class="example-full-width">
-                    <input type="number" matInput placeholder="Machine One Meter" [formControl]="MachineOneMetreFormControl" [errorStateMatcher]="matcher">
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Machine Two Meter Reading" name="MachineTwo" #MachineTwo="ngModel" [(ngModel)]="powergendata.machinetwo" class="form-control" required/>
+                <span *ngIf="(MachineTwo.dirty || MachineTwo.touched) && MachineTwo.hasError('required')" class="alert">
+                    Machine Two Meter Reading is required.
+                </span>
 
-                    <mat-error *ngIf="MachineOneMetreFormControl.hasError('required')">
-                        Number is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-4">
+            </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <input type="number" matInput placeholder="Machine Two Meter" [formControl]="MachineTwoMetreFormControl" [errorStateMatcher]="matcher">
+            <h6 style="margin-left: 10px;">
+                Machine One</h6>
 
-                    <mat-error *ngIf="MachineTwoMetreFormControl.hasError('required')">
-                        Number is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Load(kWh)" name="M1load" #M1load="ngModel" [(ngModel)]="powergendata.machine1.load" class="form-control" required/>
+                <span *ngIf="(M1load.dirty || M1load.touched) && M1load.hasError('required')" class="alert">
+                    Load(kWh) is required.
+                </span>
+            </mat-form-field>
 
-            </div>
-            <div class="col-sm-4">
-                <button mat-button>Submit</button>
-                <button mat-button color="warn">Clear</button>
-                <div class="row">
-                    <a mat-button routerLink="/operator/machine-one">Machine Details</a>
-                </div>
+
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Daily Max Load Assumed(kWh)" name="M1daillymaxload" #M1daillymaxload="ngModel" [(ngModel)]="powergendata.machine1.daillymaxload" class="form-control" required/>
+                <span *ngIf="(M1daillymaxload.dirty || M1daillymaxload.touched) && M1daillymaxload.hasError('required')" class="alert">
+                    Daily Max Load Assumed(kWh) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Outages(min)" name="M1outages" #M1outages="ngModel" [(ngModel)]="powergendata.machine1.outages" class="form-control" required/>
+                <span *ngIf="(M1outages.dirty || M1outages.touched) && M1outages.hasError('required')" class="alert">
+                    Outages(min) is required.
+                </span>
+
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Grid(min)" name="M1grid" #M1grid="ngModel" [(ngModel)]="powergendata.machine1.grid" class="form-control" required/>
+                <span *ngIf="(M1grid.dirty || M1grid.touched) && M1grid.hasError('required')" class="alert">
+                    Grid(min) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Generation(kWh)" name="M1generation" #M1generation="ngModel" [(ngModel)]="powergendata.machine1.generation" class="form-control" required/>
+                <span *ngIf="(M1generation.dirty || M1generation.touched) && M1generation.hasError('required')" class="alert">
+                    Generation(kWh) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Power Machine(kW)" name="M1powermachine" #M1powermachine="ngModel" [(ngModel)]="powergendata.machine1.powermachine" class="form-control" required/>
+                <span *ngIf="(M1powermachine.dirty || M1powermachine.touched) && M1powermachine.hasError('required')" class="alert">
+                    Power Machine(kW) is required.
+                </span>
+            </mat-form-field><br>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Generator Windings(Celcius)" name="M1generatorwindings" #M1generatorwindings="ngModel" [(ngModel)]="powergendata.machine1.generatorwindings" class="form-control" required/>
+                <span *ngIf="(M1generatorwindings.dirty || M1generatorwindings.touched) && M1generatorwindings.hasError('required')" class="alert">
+                    Generator Windings(Celcius) is required.
+                </span>
+
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="DE Bearing Temp(Celcius)" name="M1debearingtemp" #M1debearingtemp="ngModel" [(ngModel)]="powergendata.machine1.debearingtemp" class="form-control" required/>
+                <span *ngIf="(M1debearingtemp.dirty || M1debearingtemp.touched) && M1debearingtemp.hasError('required')" class="alert">
+                    DE Bearing Temp(Celcius) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="NDE Bearing Temp(Celcius)" name="M1ndebearingtemp" #M1ndebearingtemp="ngModel" [(ngModel)]="powergendata.machine1.ndebearingtemp" class="form-control" required/>
+                <span *ngIf="(M1ndebearingtemp.dirty || M1ndebearingtemp.touched) && M1ndebearingtemp.hasError('required')" class="alert">
+                    NDE Bearing Temp(Celcius) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Transformer Oil Temp(Celcius)" name="M1transfomeroiltemp" #M1transfomeroiltemp="ngModel" [(ngModel)]="powergendata.machine1.transfomeroiltemp" class="form-control" required/>
+                <span *ngIf="(M1transfomeroiltemp.dirty || M1transfomeroiltemp.touched) && M1transfomeroiltemp.hasError('required')" class="alert">
+                    Transformer Oil Temp(Celcius) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Lubricant Oil Temp(Celcius)" name="M1lubricantoiltemp" #M1lubricantoiltemp="ngModel" [(ngModel)]="powergendata.machine1.lubricantoiltemp" class="form-control" required/>
+                <span *ngIf="(M1lubricantoiltemp.dirty || M1lubricantoiltemp.touched) && M1lubricantoiltemp.hasError('required')" class="alert">
+                    Lubricant Oil Temp(Celcius) is required.
+                </span>
+            </mat-form-field>
+
+
+            <h6 style="margin-left: 10px;">
+                Machine Two</h6>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Load(kWh)" name="M2load" #M2load="ngModel" [(ngModel)]="powergendata.machine2.load" class="form-control" required/>
+                <span *ngIf="(M2load.dirty || M2load.touched) && M2load.hasError('required')" class="alert">
+                    Load(kWh) is required.
+                </span>
+            </mat-form-field>
+
+
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Daily Max Load Assumed(kWh)" name="M2daillymaxload" #M2daillymaxload="ngModel" [(ngModel)]="powergendata.machine2.daillymaxload" class="form-control" required/>
+                <span *ngIf="(M2daillymaxload.dirty || M2daillymaxload.touched) && M2daillymaxload.hasError('required')" class="alert">
+                    Daily Max Load Assumed(kWh) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input type="number" matInput placeholder="Outages(min)" name="M2outages" #M2outages="ngModel" [(ngModel)]="powergendata.machine2.outages" class="form-control" required/>
+                <span *ngIf="(M2outages.dirty || M2outages.touched) && M2outages.hasError('required')" class="alert">
+                    Outages(min) is required.
+                </span>
+
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="number " matInput placeholder="Grid(min) " name="M2grid " #M2grid="ngModel" [(ngModel)]="powergendata.machine2.grid" class="form-control" required/>
+                <span *ngIf="(M2grid.dirty || M2grid.touched) && M2grid.hasError('required')" class="alert">
+                    Grid(min) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width ">
+                <input type="number " matInput placeholder="Generation(kWh) " name="M2generation" #M2generation="ngModel" [(ngModel)]="powergendata.machine2.generation" class="form-control" required/>
+                <span *ngIf="(M2generation.dirty || M2generation.touched) && M2generation.hasError('required')" class="alert">
+                    Generation(kWh) is required.
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width ">
+                <input type="number " matInput placeholder="Power Machine(kWh) " name="M2powermachine" #M2powermachine="ngModel" [(ngModel)]="powergendata.machine2.powermachine" class="form-control" required/>
+                <span *ngIf="(M2powermachine.dirty || M2powermachine.touched) && M2powermachine.hasError('required')" class="alert">
+                    Power Machine(kWh) is required.
+                </span>
+            </mat-form-field><br>
+
+            <mat-form-field class="example-full-width ">
+                <input type="number " matInput placeholder="Generator Windings(Celcius) " name="M2generatorwindings" #M2generatorwindings="ngModel" [(ngModel)]="powergendata.machine2.generatorwindings" class="form-control" required/>
+                <span *ngIf="(M2generatorwindings.dirty || M2generatorwindings.touched) && M2generatorwindings.hasError('required')" class="alert">
+                    Generator Windings(Celcius) is required.
+                </span>
+
+
+            </mat-form-field>
+            <mat-form-field class="example-full-width ">
+                <input type="number " matInput placeholder="DE Bearing Temp(Celcius) " name="M2debearingtemp" #M2debearingtemp="ngModel" [(ngModel)]="powergendata.machine2.debearingtemp" class="form-control" required/>
+                <span *ngIf="(M2debearingtemp.dirty || M2debearingtemp.touched) && M2debearingtemp.hasError('required')" class="alert">
+                    DE Bearing Temp(Celcius) is required.
+
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width ">
+                <input type="number " matInput placeholder="NDE Bearing Temp(Celcius) " name="M2ndebearingtemp" #M2ndebearingtemp="ngModel" [(ngModel)]="powergendata.machine2.ndebearingtemp" class="form-control" required/>
+                <span *ngIf="(M2ndebearingtemp.dirty || M2ndebearingtemp.touched) && M2ndebearingtemp.hasError('required')" class="alert">
+                    NDE Bearing Temp(Celcius) is required.
+
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width ">
+                <input type="number " matInput placeholder="Transformer Oil Temp(Celcius) " name="M2transfomeroiltemp" #M2transfomeroiltemp="ngModel" [(ngModel)]="powergendata.machine2.transfomeroiltemp" class="form-control" required/>
+                <span *ngIf="(M2transfomeroiltemp.dirty || M2transfomeroiltemp.touched) && M2transfomeroiltemp.hasError('required')" class="alert">
+                    Transformer Oil Temp(Celcius) is required.
+
+                </span>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width ">
+                <input type="number " matInput placeholder="Lubricant Oil Temp(Celcius) " name="M2lubricantoiltemp" #M2lubricantoiltemp="ngModel" [(ngModel)]="powergendata.machine2.lubricantoiltemp" class="form-control" required/>
+                <span *ngIf="(M2lubricantoiltemp.dirty || M2lubricantoiltemp.touched) && M2lubricantoiltemp.hasError('required')" class="alert">
+                    Lubricant Oil Temp(Celcius)Tempis required.
+
+                </span>
+
+            </mat-form-field>
+            <br>
+            <div class="btn">
+                <button type="submit" mat-button [disabled]="form.invalid">Add</button>
+                <button mat-button (click)="resetForm()">Clear</button>
             </div>
         </form>
 
 
 
-    </div>
-</div>
+
+
+    </mat-card-content>
+</mat-card>

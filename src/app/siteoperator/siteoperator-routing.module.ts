@@ -4,8 +4,6 @@ import { SitesupervisorComponent } from '../sitesupervisor/sitesupervisor.compon
 import { RouterModule, Routes } from '@angular/router';
 import { MainDataComponent } from './generate-data/main-data/main-data.component';
 import { SiteoperatorComponent } from './siteoperator.component';
-import { MachineOneComponent } from './generate-data/machine-one/machine-one.component';
-import { MachineTwoComponent } from './generate-data/machine-two/machine-two.component';
 import { GeneratorAnnualyComponent } from './maintenence-data/generator/annualy/annualy.component';
 import { GeneratorHalfyearComponent } from './maintenence-data/generator/halfyear/halfyear.component';
 import { GeneratorQuaterlyComponent } from './maintenence-data/generator/quaterly/quaterly.component';
@@ -28,8 +26,6 @@ const routes: Routes = [
       { path: '', redirectTo: 'main', pathMatch: 'full'},
       {path : 'signin', component: SigninComponent},
       { path: 'main', component: MainDataComponent},
-      { path : 'machine-one', component: MachineOneComponent},
-      { path : 'machine-two', component: MachineTwoComponent},
       {path: 'generator-anualy', component: GeneratorAnnualyComponent},
       {path: 'generator-halfyear', component: GeneratorHalfyearComponent},
       {path: 'generator-quaterly', component: GeneratorQuaterlyComponent},

@@ -43,3 +43,14 @@ mat-dialog-container {
 .mat-tool-bar {
     color: rgb(95, 92, 92);
 }
+
+input .ng-touched .ng-invalid {
+    border-color: #dc3545;
+}
+
+div .validation-error {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}

@@ -8,6 +8,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './shared/material.module';
 // animations
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// tooastr module
+import { ToastrModule } from 'ngx-toastr';
 // routing
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +34,7 @@ import { BeforsigninComponent } from './shared/beforsignin/beforsignin.component
 // Firebase modules
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
@@ -59,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     MaterialModule,
     NgbModule,
     FlexLayoutModule,
@@ -74,7 +77,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule, // Only required for storage features
   ],
-  providers: [AuthService],
+  providers: [AuthService, { provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
