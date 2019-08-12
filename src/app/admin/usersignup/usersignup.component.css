@@ -1,0 +1,69 @@
+.main-container {
+    height: 85vh;
+}
+
+.user-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 15px;
+}
+
+.user-display mat-card {
+    position: relative;
+    text-align: center;
+}
+
+.user-display mat-card {
+    height: 500px;
+}
+
+.mat-display-1 {
+    color: blue;
+}
+
+.user-display mat-card-header {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 55px;
+    background: rgba(255, 248, 225, .6);
+}
+
+.user-display mat-card-actions {
+    position: absolute;
+    text-align: center;
+    bottom: 1%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+mat-raised-button {
+    size: 100px;
+}
+
+a {
+    font-size: 30px;
+}
+
+.admin {
+    background: url(/assets/images/admin.jpg)center center no-repeat;
+    background-size: cover;
+}
+
+.siteoperator {
+    background: url(/assets/images/dsc_1289-3.jpg)center center no-repeat;
+    background-size: cover;
+}
+
+.manager {
+    background: url(/assets/images/manager.jpg)center center no-repeat;
+    background-size: cover;
+}
+
+.supervisor {
+    background: url(/assets/images/dsc_0793-2.jpg)center center no-repeat;
+    background-size: cover;
+}

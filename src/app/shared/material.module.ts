@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import {
@@ -41,6 +42,7 @@ import {
 } from '@angular/material';
 
 
+
 @NgModule({
     imports: [
         MatAutocompleteModule,
@@ -77,7 +79,10 @@ import {
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
+        MatNativeDateModule,
         MatTreeModule,
+        NgbModule,
+
     ],
     exports: [
         MatAutocompleteModule,
@@ -89,6 +94,7 @@ import {
         MatCheckboxModule,
         MatChipsModule,
         MatDatepickerModule,
+        MatNativeDateModule,
         MatDialogModule,
         MatDividerModule,
         MatExpansionModule,
@@ -115,6 +121,10 @@ import {
         MatToolbarModule,
         MatTooltipModule,
         MatTreeModule,
+        NgbModule,
+
+
+
 
     ],
     declarations: []

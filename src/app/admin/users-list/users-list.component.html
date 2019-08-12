@@ -1,0 +1,31 @@
+<table class="table table-hover">
+
+    <thead>
+        <th>User Role</th>
+        <th>Name</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of adminlist ">
+            <td>Admininstrator</td>
+            <td>{{ user.displayName }}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+
+        <tr *ngFor="let user of operatorlist ">
+            <td>Site Operator</td>
+            <td>{{ user.displayName}}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr *ngFor="let user of supervisorlist ">
+            <td>Site Supervisor</td>
+            <td>{{ user.displayName}}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr *ngFor="let user of managerlist ">
+            <td>Manager</td>
+            <td>{{ user.displayName}}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+
+    </tbody>

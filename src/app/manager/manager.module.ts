@@ -11,9 +11,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ManagerComponent } from './manager.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ChartComponent } from './chart/chart.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
-  declarations: [NavtabsComponent, SidenavListComponent, HeaderComponent, ManagerComponent, DashboardComponent],
+  declarations: [NavtabsComponent, SidenavListComponent, HeaderComponent, ManagerComponent, DashboardComponent, ChartComponent,
+    SigninComponent],
   imports: [
     CommonModule,
     ManagerRoutingModule,

@@ -1,0 +1,43 @@
+<br>
+<br>
+<br>
+<div class="sign-up-container" fxLayout="column" fxLayoutAlign="center center">
+    <h3 class="mat-display-1"><b>Sign up</b></h3>
+
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" #userName required>
+
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [formControl]="passwordFormControl" [errorStateMatcher]="matcher" #userPassword required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+
+        <mat-error *ngIf="passwordFormControl.hasError('required') &&  !passwordFormControl.hasError('minlength(8)')">
+            Password is <strong>required</strong>
+
+        </mat-error>
+
+        <mat-error *ngIf="!passwordFormControl.hasError('pattern(this.pwdPattern)')">
+            Password <strong>should A-Z,a-z,0-9,@,#,$ with 8 characters  </strong>
+        </mat-error>
+
+
+    </mat-form-field>
+
+    <br>
+
+    <button mat-stroked-button color="blue" (click)="authService.SupervisorSignUp(userName.value, userPassword.value)">Sign Up</button>
+    <br>
+    <br>
+</div>

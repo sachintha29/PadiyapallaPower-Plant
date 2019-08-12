@@ -35,29 +35,103 @@ JSON.parse(localStorage.getItem('user'));
 }
 
 // Sign in with email/password
-SignIn(email, password) {
-return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-.then((result) => {
-this.ngZone.run(() => {
-this.router.navigate(['/admin']);
-});
-
-}).catch((error) => {
-window.alert(error.message);
-});
+AdminSignIn(email, password) {
+  return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+  .then((result) => {
+  this.ngZone.run(() => {
+  this.router.navigate(['/admin']);
+  });
+  this.SetAdminData(result.user);
+  }).catch((error) => {
+  window.alert(error.message);
+  });
 }
 
+SupervisorSignIn(email, password) {
+  return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+  .then((result) => {
+  this.ngZone.run(() => {
+  this.router.navigate(['/supervisor']);
+  });
+  this.SetSupervisorData(result.user);
+  }).catch((error) => {
+  window.alert(error.message);
+  });
+  }
+
+  OperatorSignIn(email, password) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    .then((result) => {
+    this.ngZone.run(() => {
+    this.router.navigate(['/operator']);
+    });
+    this.SetOperatorData(result.user);
+
+    }).catch((error) => {
+    window.alert(error.message);
+    });
+    }
+
+  ManagerSignIn(email, password) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    .then((result) => {
+    this.ngZone.run(() => {
+    this.router.navigate(['/manager']);
+    });
+    this.SetManagerData(result.user);
+    }).catch((error) => {
+    window.alert(error.message);
+    });
+    }
+
+
 // Sign up with email/password
-SignUp(email, password) {
+AdminSignUp(email, password) {
 return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
 .then((result) => {
 /* Call the SendVerificaitonMail() function when new user sign
 up and returns promise */
 this.SendVerificationMail();
-this.SetUserData(result.user);
+this.SetAdminData(result.user);
 }).catch((error) => {
 window.alert(error.message);
 });
+}
+
+ManagerSignUp(email, password) {
+  return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+  .then((result) => {
+  /* Call the SendVerificaitonMail() function when new user sign
+  up and returns promise */
+  this.SendVerificationMail();
+  this.SetManagerData(result.user);
+  }).catch((error) => {
+  window.alert(error.message);
+  });
+  }
+
+SupervisorSignUp(email, password) {
+  return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+  .then((result) => {
+  /* Call the SendVerificaitonMail() function when new user sign
+  up and returns promise */
+  this.SendVerificationMail();
+  this.SetSupervisorData(result.user);
+  }).catch((error) => {
+  window.alert(error.message);
+  });
+}
+
+OperatorSignUp(email, password) {
+  return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+  .then((result) => {
+  /* Call the SendVerificaitonMail() function when new user sign
+  up and returns promise */
+  this.SendVerificationMail();
+  this.SetOperatorData(result.user);
+  }).catch((error) => {
+  window.alert(error.message);
+  });
 }
 
 // Send email verfificaiton when new user sign up
@@ -93,7 +167,7 @@ return this.afAuth.auth.signInWithPopup(provider)
 this.ngZone.run(() => {
 this.router.navigate(['/admin']);
 });
-this.SetUserData(result.user);
+this.SetAdminData(result.user);
 }).catch((error) => {
 window.alert(error);
 });
@@ -101,11 +175,63 @@ window.alert(error);
 /* Setting up user data when sign in with username/password,
 sign up with username/password and sign in with social auth
 provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-updateUser(user: User, data: any) {
-  return this.afs.doc(`users/${user.uid}`).update(data);
+updateAdmin(user: User, data: any) {
+  return this.afs.doc(`users/userdetails/admin/${user.uid}`).update(data);
 }
-SetUserData(user) {
-  const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+updateSupervisor(user: User, data: any) {
+  return this.afs.doc(`users/userdetails/supervisor/${user.uid}`).update(data);
+}
+
+updateOperator(user: User, data: any) {
+  return this.afs.doc(`users/userdetails/operator/${user.uid}`).update(data);
+}
+updateManager(user: User, data: any) {
+  return this.afs.doc(`users/userdetails/manager/${user.uid}`).update(data);
+}
+SetAdminData(user) {
+  const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/userdetails/admin/${user.uid}`);
+  const userData: User = {
+  uid: user.uid,
+  email: user.email,
+  displayName: user.displayName,
+  photoURL: user.photoURL,
+  emailVerified: user.emailVerified,
+  };
+  return userRef.set(userData, {
+  merge: true
+});
+}
+
+SetOperatorData(user) {
+  const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/userdetails/operator/${user.uid}`);
+  const userData: User = {
+  uid: user.uid,
+  email: user.email,
+  displayName: user.displayName,
+  photoURL: user.photoURL,
+  emailVerified: user.emailVerified,
+  };
+  return userRef.set(userData, {
+  merge: true
+});
+}
+
+SetSupervisorData(user) {
+  const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/userdetails/supervisor/${user.uid}`);
+  const userData: User = {
+  uid: user.uid,
+  email: user.email,
+  displayName: user.displayName,
+  photoURL: user.photoURL,
+  emailVerified: user.emailVerified,
+  };
+  return userRef.set(userData, {
+  merge: true
+});
+}
+
+SetManagerData(user) {
+  const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/userdetails/manager/${user.uid}`);
   const userData: User = {
   uid: user.uid,
   email: user.email,
@@ -121,7 +247,7 @@ SetUserData(user) {
 SignOut() {
 return this.afAuth.auth.signOut().then(() => {
 localStorage.removeItem('user');
-this.router.navigate(['home']);
+this.router.navigate(['/']);
 });
 }
 }

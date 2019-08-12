@@ -1,0 +1,256 @@
+<div class="row" id="machine1">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-10 col-sm-offset-1">
+        <h5 style="margin-left: 15px;">
+            <br> Machine One</h5>
+
+        <form>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Load(kWh)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Load(KWh) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Daily Max Load Assumed(kWh)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Daily Max Load Assumed(kWh) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Outages(min)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Outages(min) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Grid(min)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Grid(min) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Generation(kWh)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Generation(kWh) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Power Machine(kW)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Power Machine(kW) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Generator Windings(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Generator Windings(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="DE Bearing Temp(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            DE Bearing Temp(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="NDE Bearing Temp(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            NDE Bearing Temp(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Transformer Oil Temp(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Transformer Oil Temp(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Lubricant Oil Temp(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Lubricant Oil Temp(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-sm-4">
+                    <button mat-button color="primary">Update</button>
+                    <button mat-button color="warn">Clear</button>
+
+                    <button mat-button color="warn">Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row" id="machine12">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-10 col-sm-offset-1">
+        <h5 style="margin-left: 15px;">
+            Machine Two</h5>
+
+        <form>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Load(kWh)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Load(KWh) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Daily Max Load Assumed(kWh)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Daily Max Load Assumed(kWh) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Outages(min)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Outages(min) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Grid(min)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Grid(min) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Generation(kWh)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Generation(kWh) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Power Machine(kW)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Power Machine(kW) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Generator Windings(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Generator Windings(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="DE Bearing Temp(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            DE Bearing Temp(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="NDE Bearing Temp(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            NDE Bearing Temp(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Transformer Oil Temp(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Transformer Oil Temp(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="example-full-width">
+                        <input type="number" matInput placeholder="Lubricant Oil Temp(Celcius)" [formControl]="CEBmeterFormControl ">
+
+                        <mat-error *ngIf="CEBmeterFormControl.hasError('required')">
+                            Lubricant Oil Temp(Celcius) is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-sm-4">
+                    <button mat-button color="primary">Update</button>
+                    <button mat-button color="warn">Clear</button>
+
+                    <button mat-button color="warn">Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

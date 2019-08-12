@@ -13,13 +13,17 @@ const routes: Routes = [
   { path : 'about', component : AboutComponent},
   { path : 'contact', component: ContactComponent},
   { path : 'beforesignin', component : BeforsigninComponent},
-  { path : 'signin', component : SigninComponent},
+  { path : '', redirectTo: '/admin/signin' , pathMatch: 'full'},
+  { path : '', redirectTo: '/manager/signin' , pathMatch: 'full'},
+  { path : '', redirectTo: '/operator/signin' , pathMatch: 'full'},
+  { path : '', redirectTo: '/supervisor/signin' , pathMatch: 'full'},
+
   { path : 'forgot-password', component: ForgotPasswordComponent},
   {path : 'vertify-email', component : VerifyEmailComponent},
   { path: '',   redirectTo: '/admin', pathMatch: 'full'},
   { path: '',   redirectTo: '/manager', pathMatch: 'full'},
   {path: '', redirectTo: '/operator', pathMatch: 'full'},
-  {path: '', redirectTo: '/siteupervisor', pathMatch: 'full'},
+  {path: '', redirectTo: '/supervisor', pathMatch: 'full'},
 
 ];
 

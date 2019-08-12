@@ -1,46 +1,11 @@
-<mat-card>
-    <mat-card-content>
-        jdsfbkbgjkkkkkkkkkk bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-        <br> cknzkncvnvnccvnvcvcv ckzknvcknvncvncvncvcv
-        <br>
-        <div *ngIf="(toggleField=='searchMode') else (toggleField=='addMode')? showAddMode : ((toggleField=='editMode')? showEditMode : showResMode)">
-            <!-- searchmode -->
-            <form #searchFormData="ngForm" class="example-form">
-                <mat-form-field class="example-form">
-                    <input matInput [disabled]="name.value > ''" type="text" placeholder="Category" id="category" name="category" #category="ngModel" ngModel minlength="3" maxlength="50">
-                </mat-form-field>
-                <br>
-                <mat-form-field class="example-form">
-                    <input matInput [disabled]="category.value > ''" type="text" placeholder="Product Name" id="name" name="name" #name="ngModel" ngModel minlength="3" maxlength="50">
-                </mat-form-field>
-                <br>
-                <mat-form-field class="example-form">
-                    <input matInput [matDatepicker]="pickerfromdt" placeholder="From Date" id="fromdt" name="fromdt" #fromdt="ngModel" [ngModel]="currentDate7">
-                    <mat-datepicker-toggle matSuffix [for]="pickerfromdt"></mat-datepicker-toggle>
-                    <mat-datepicker #pickerfromdt></mat-datepicker>
-                </mat-form-field>
-                <br>
-                <mat-form-field class="example-form">
-                    <input matInput [matDatepicker]="pickertodt" placeholder="To Date" id="todt" name="todt" #todt="ngModel" [ngModel]="currentDate">
-                    <mat-datepicker-toggle matSuffix [for]="pickertodt"></mat-datepicker-toggle>
-                    <mat-datepicker #pickertodt></mat-datepicker>
-                </mat-form-field>
-            </form>
+<div class="row">
 
-        </div>
-    </mat-card-content>
-</mat-card>
-
-<ng-template #showAddMode>
-    <!--add page-->
-</ng-template>
+    <div class="col-md-7">
+        <app-users-list></app-users-list>
 
 
-<ng-template #showEditMode>
-    <!--edit page-->
-</ng-template>
+    </div>
+    <div class="col-md-5">
 
-
-<ng-template #showResMode>
-    <!--result page-->
-</ng-template>
+    </div>
+</div>

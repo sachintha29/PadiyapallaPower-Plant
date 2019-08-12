@@ -1,0 +1,123 @@
+<h2 style="margin-left: 15px;"><b>Half Year</b></h2>
+
+<div class="row" id="weeklyData">
+
+    <div class="row" id="machine1">
+
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="col-sm-10">
+                <h3 style="margin-left: 15px;">Machine One</h3>
+            </div>
+
+
+            <form>
+
+
+                <div class="col-sm-10">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Cleaning of the Exciter" [formControl]="CleaningoftheExciterFormControl">
+                        <mat-error *ngIf="CleaningoftheExciterFormControl.hasError('required')">
+                            Field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-sm-10">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Control Unit Case Cleaning" [formControl]="ControlUnitCaseCleaningFormControl">
+                        <mat-error *ngIf="ControlUnitCaseCleaningFormControl.hasError('required')">
+                            Field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-sm-10">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Visual Inspection of the Brake Shoes" [formControl]="VisualInspectionofBrakeShoesFormControl">
+                        <mat-error *ngIf="VisualInspectionofBrakeShoesFormControl.hasError('required')">
+                            Field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="col-sm-10">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Inspection and Checking of the Transformer Protection Devices" [formControl]="InspectionandCheckingFormControl">
+                        <mat-error *ngIf="InspectionandCheckingFormControl.hasError('required')">
+                            Field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+
+
+                <div class="col-sm-10">
+                    <button mat-button>Submit</button>
+                    <button mat-button color="warn">clear</button>
+
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="row" id="machine2">
+
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="col-sm-10">
+                <h3 style="margin-left: 15px;">Machine Two</h3>
+            </div>
+
+            <form>
+
+
+                <div class="col-sm-10">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Cleaning of the Exciter" [formControl]="CleaningoftheExciterFormControl">
+                        <mat-error *ngIf="CleaningoftheExciterFormControl.hasError('required')">
+                            Field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-sm-10">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Control Unit Case Cleaning" [formControl]="ControlUnitCaseCleaningFormControl">
+                        <mat-error *ngIf="ControlUnitCaseCleaningFormControl.hasError('required')">
+                            Field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-sm-10">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Visual Inspection of the Brake Shoes" [formControl]="VisualInspectionofBrakeShoesFormControl">
+                        <mat-error *ngIf="VisualInspectionofBrakeShoesFormControl.hasError('required')">
+                            Field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="col-sm-10">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Inspection and Checking of the Transformer Protection Devices" [formControl]="InspectionandCheckingFormControl">
+                        <mat-error *ngIf="InspectionandCheckingFormControl.hasError('required')">
+                            Field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="col-sm-10">
+                    <button mat-button>Submit</button>
+                    <button mat-button color="warn">clear</button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>

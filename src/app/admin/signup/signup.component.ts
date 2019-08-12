@@ -57,16 +57,5 @@ export class SignupComponent implements OnInit {
 
     });
 
-  }
-
-  get displayName() { return this.detailForm.get('displayName'); }
-  get address() { return this.detailForm.get('address'); }
-  get phone() { return this.detailForm.get('role'); }
-  get role() { return this.detailForm.get('role'); }
-
-  updateUserData(user) {
-    return this.authService.updateUser(user, { displayName:  this.displayName.value, address: this.address.value,
-      phone: this.phone.value , role: this.role.value });
-  }
-
+}
 }

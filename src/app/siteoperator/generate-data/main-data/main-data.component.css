@@ -1,12 +1,51 @@
-.form-label{
-	margin-top: 10px;
-	color: #8d8d8e;
+.next-btn {
+    margin: 15px;
 }
 
-.input-block{
-	margin-top: 10px;
+h5 {
+    text-align: center;
+    text-decoration-line: inherit;
 }
 
-.next-btn{
-	margin: 15px;
+.example-button-row button,
+.example-button-row a {
+    margin-right: 8px;
+    size: 100rem;
+}
+
+.example-full-width {
+    width: 230px;
+    margin-right: 10px;
+}
+
+.col-sm-4 {
+    max-width: 100%;
+}
+
+.scrollable {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+input .ng-touched .ng-invalid {
+    border-color: #dc3545;
+}
+
+div .validation-error {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.alert-danger {
+    width: 200px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.alert {
+    font-size: 12px;
+    height: 10px;
+    color: #dc3545;
 }

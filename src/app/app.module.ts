@@ -8,6 +8,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './shared/material.module';
 // animations
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// tooastr module
+import { ToastrModule } from 'ngx-toastr';
 // routing
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,15 +18,15 @@ import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NavtabsComponent } from './shared/navtabs/navtabs.component';
 
-// componen
+// component
 import { ContactComponent } from './contact/contact.component';
-import { SigninComponent } from './shared/signin/signin.component';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './shared/verify-email/verify-email.component';
 // user modules
 import { AdminModule} from './admin/admin.module';
 import { ManagerModule } from './manager/manager.module';
 import { SiteoperatorModule } from './siteoperator/siteoperator.module';
+import {SitesupervisorModule} from './sitesupervisor/sitesupervisor.module';
 
 
 import { BeforsigninComponent } from './shared/beforsignin/beforsignin.component';
@@ -32,7 +34,7 @@ import { BeforsigninComponent } from './shared/beforsignin/beforsignin.component
 // Firebase modules
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
@@ -48,7 +50,6 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     NavtabsComponent,
     ContactComponent,
-    SigninComponent,
     BeforsigninComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent
@@ -60,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     MaterialModule,
     NgbModule,
     FlexLayoutModule,
@@ -68,13 +70,14 @@ import { HttpClientModule } from '@angular/common/http';
     AdminModule,
     ManagerModule,
     SiteoperatorModule,
+    SitesupervisorModule,
     AngularFireModule.initializeApp(environment.firebase, 'realhydro'),
     AngularFireDatabaseModule,
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule, // Only required for storage features
   ],
-  providers: [AuthService],
+  providers: [AuthService, { provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

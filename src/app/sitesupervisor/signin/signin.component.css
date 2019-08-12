@@ -1,0 +1,42 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 50%;
+}
+
+.example-full-width {
+    width: 500px;
+}
+
+.forget-password {
+    color: blue;
+}
+
+.sign-in-container>* {
+    width: 400px;
+    outline-color: aquamarine;
+}
+
+.mat-display-1 {
+    text-align: center;
+}
+
+.main-container {
+    height: 85vh;
+    background: url(/assets/images/current-electrical-electricity-47307.jpg)center center no-repeat;
+    background-size: cover;
+}
+
+.card {
+    width: 500px;
+    box-align: center center;
+    margin-left: 35%;
+    margin-bottom: 10%;
+    outline-style: groove;
+    outline-color: black;
+}
+
+.google,
+.login-button {
+    outline-style: groove;
+}
